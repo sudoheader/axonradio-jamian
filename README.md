@@ -1,2 +1,2 @@
 # axonradio-jamian
-my section of the code for the cSUN senior project AXONRADio
+my section of the code for the CSUN senior project AXONRADio
