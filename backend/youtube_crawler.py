@@ -114,7 +114,7 @@ def youtube_search():
 #function that grabs a random youtubevideo id is using randomyoutube api
 #This is the api that the above algorithm is based upon
 def getRandomId():
-    url = 'https://randomyoutube.net/api/getvid?api_token=TktN4bc321ZUZvidMKRVyKHcacVXnwlHCUkm8qb3c22YelU2hiR7FIQgBM6t'
+    url = 'https://randomyoutube.net/api/getvid?'
     response = urllib2.urlopen(url)
     jsonResponse = response.read()
     stringResponse = json.loads(jsonResponse)
