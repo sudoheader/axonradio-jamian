@@ -1,5 +1,5 @@
 import os, shutil
-import YoutubeCrawler as yc
+import youtube_crawler as yc
 import quick_test as qt
 from time import gmtime, strftime
 from flask_pymongo import PyMongo
