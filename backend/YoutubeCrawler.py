@@ -15,7 +15,9 @@ import isodate
 import datetime as dt
 import pprint
 
-DEVELOPER_KEY = "***REMOVED***"
+with open('config.json') as json_data_file:
+    key = json.load(json_data_file)
+DEVELOPER_KEY = key['MY_KEY']
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 MUSIC = "10"
@@ -148,12 +150,3 @@ if __name__ == "__main__":
     #print(url)
     #webbrowser.open(url)
     download_song(url)
-
-
-
-
-#random youtube api key
-#TktN4bc321ZUZvidMKRVyKHcacVXnwlHCUkm8qb3c22YelU2hiR7FIQgBM6t
-
-#youtube api key
-#***REMOVED***
