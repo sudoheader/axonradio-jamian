@@ -121,7 +121,7 @@ def run():
     index = np.arange(tags.shape[0])
     opacity = 1
     bar_width = 0.2
-    #print mean
+    print mean.tolist()
     #for g in range(0, tags.shape[0]):
     plt.bar(left=index, height=mean, width=bar_width, alpha=opacity, color=colors)
 
@@ -133,4 +133,4 @@ def run():
     fig.autofmt_xdate()
     plt.savefig('genres_prediction.png')
 
-    return tags[predicted_label_mean], song_paths[0]
+    return tags[predicted_label_mean], song_paths[0], mean.tolist()

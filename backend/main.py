@@ -7,29 +7,53 @@ from pymongo import MongoClient
 import time as t
 from flask import Flask, jsonify, url_for, redirect, request
 
+def jazz(post):
+    jazz_songs = db.jazz
+    post_id = jazz_songs.insert_one(post).inserted_id
+def rock(post):
+    rock_songs = db.rock
+    post_id = rock_songs.insert_one(post).inserted_id
+def blues(post):
+    blues_songs = db.blues
+    post_id = blues_songs.insert_one(post).inserted_id
+def pop(post):
+    pop_songs = db.pop
+    post_id = pop_songs.insert_one(post).inserted_id
+def reggae(post):
+    reggae_songs = db.reggae
+    post_id = reggae_songs.insert_one(post).inserted_id
+def hiphop(post):
+    hiphop_songs = db.hiphop
+    post_id = hiphop_songs.insert_one(post).inserted_id
+def disco(post):
+    disco_songs = db.disco
+    post_id = disco_songs.insert_one(post).inserted_id
+def country(post):
+    country_songs = db.country
+    post_id = country_songs.insert_one(post).inserted_id
+def classical(post):
+    classical_songs = db.classical
+    post_id = classical_songs.insert_one(post).inserted_id
+def metal(post):
+    metal_songs = db.metal
+    post_id = metal_songs.insert_one(post).inserted_id
 
-# app = Flask(__name__)
-# app.config['MONGO_DBNAME'] = 'song_db'
-# mongo = PyMongo(app, config_prefix='MONGO')
-#
-# @app.route('/api', methods=['GET'])
-# def get_all_songs():
-#     songs = mongo.db.posts
-#     output = []
-#     for q in songs.find().limit(10):
-#         output.append({"name": q['name'], "genre": q['genre'], "url": q['url']})
-#     return jsonify(output)
-#
-# @app.route('/api/<genre>', methods=['GET'])
-# def get_song_list(genre):
-#     songs = mongo.db.posts
-#     output = []
-#     for q in songs.find({"genre": genre}).limit(10):
-#         output.append({"name": q['name'], "genre": q['genre'], "url": q['url']})
-#     return jsonify(output)
 
-
-
+def putInDb(arg, post):
+    switcher = {
+        'jazz': jazz,
+        'rock': rock,
+        'blues': blues,
+        'pop': pop,
+        'reggae': reggae,
+        'hiphop': hiphop,
+        'disco': disco,
+        'country': country,
+        'classical': classical,
+        'metal': metal
+    }
+    func = switcher.get(arg, lambda:'invalid genre')
+    func(post)
 
 #def classify_songs():
 while(True):
@@ -61,21 +85,26 @@ while(True):
 
 
     #analyze our songs genre
-    genre, song_name = qt.run()
+    try:
+        genre, song_name, mean = qt.run()
+    except Exception as e:
+        print(e)
+        continue
 
     #put song data in database
-
-
+   
     client = MongoClient()
     db = client.song_db
     time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
-    post = {"name": song_name,
+    post = {"name": song_name[:-4],
             "genre": genre,
             "url": url,
             "vidID": vidID,
-            "date": time}
-    posts = db.posts
-    post_id = posts.insert_one(post).inserted_id
+            "date": time,
+            "mean": mean}
+    putInDb(genre, post)
+    # posts = db.posts
+    # post_id = posts.insert_one(post).inserted_id
     #print(post_id)
     print("url: {} \ngenre: {} \ntime entered: {} \n".format(url, genre, time))
 

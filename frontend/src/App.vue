@@ -7,6 +7,7 @@
 </template>
 
 <script>
+
 export default {
   data () {
     return {
@@ -23,6 +24,8 @@ export default {
       title: 'Vuetify.js'
     }
   },
-  name: 'App'
+  name: 'App',
+
+
 }
 </script>
