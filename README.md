@@ -3,7 +3,7 @@ my section of the code for the CSUN senior project AXONRADio
 <h3>To run backend code:</h3>
 <ul>
   <ol>install anaconda</ol>
-  <ol>`conda create --name myenv --file spec-file.txt</ol`>
+  <ol>`conda create --name myenv --file spec-file.txt`</ol>
   <ol>`conda activate myenv`</ol>
   <ol>`python predictions.py` to run script to classify youtube links</ol>
   <ol>`python restful_test.py` to run restful flask server</ol>
