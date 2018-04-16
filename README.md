@@ -1,6 +1,6 @@
 # axonradio-jamian
 my section of the code for the CSUN senior project AXONRADio
-<h1>To run backend code:</hi>
+<h3>To run backend code:</h3>
 <ul>
   <ol>install anaconda</ol>
   <ol>conda create --name myenv --file spec-file.txt</ol>
@@ -9,14 +9,14 @@ my section of the code for the CSUN senior project AXONRADio
   <ol>python restful_test.py to run restful flask server</ol>
 </ul>
 <hr />
-<hi>Install and run mongodb</hi>
+<h3>Install and run mongodb</h3>
 <ul>
   <ol>sudo service mongod start</ol>
   <ol>mongo --host 127.0.0.1:27017</ol>
 </ul>
 <hr />
 
-<hi>Run vue app</hi>
+<h3>Run vue app</h3>
 <ul>
   <ol>cd frontend</ol>
   <ol>npm run dev</ol>
