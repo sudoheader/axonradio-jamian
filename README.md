@@ -10,14 +10,14 @@ my section of the code for the CSUN senior project AXONRADio
 </ul>
 <hr />
 <h3>Install and run mongodb</h3>
-```bash
+```
   sudo service mongod start
   mongo --host 127.0.0.1:27017
 ```
 <hr />
 
 <h3>Run vue app</h3>
-```bash
+```
 cd frontend
 npm run dev
 ```
