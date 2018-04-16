@@ -11,8 +11,8 @@ my section of the code for the CSUN senior project AXONRADio
 <hr />
 <h3>Install and run mongodb</h3>
 ```
-  sudo service mongod start
-  mongo --host 127.0.0.1:27017
+sudo service mongod start
+mongo --host 127.0.0.1:27017
 ```
 <hr />
 
